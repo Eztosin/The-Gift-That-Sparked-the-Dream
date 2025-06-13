@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You, Dad – CSS Tribute</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Georgia:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div class="scene" data-active-scene="gift">
+
+        <div class="platform-shadow"></div>
+
+        <div class="father">
+            <div class="right-arm"></div>
+            <div class="left-arm"></div>
+            <div class="right-leg"></div>
+            <div class="left-leg"></div>
+        </div>
+
+        <div class="child">
+            <div class="right-arm"></div>
+            <div class="left-arm"></div>
+            <div class="right-leg"></div>
+            <div class="left-leg"></div>
+        </div>
+
+        <div class="laptop hover-effect">
+            <div class="screen">
+                <pre class="code-snippet" id="changing-code"></pre>
+            </div>
+            <div class="particles"></div>
+        </div>
+
+        <div class="photo-frame">
+            <div class="photo-inner">
+                <div class="photo-memory"></div>
+                <div class="photo-caption">First day with my laptop</div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-point" data-year="Past">
+                <div class="timeline-icon">🎁</div>
+                <div class="timeline-label">The Gift</div>
+            </div>
+            <div class="timeline-point" data-year="Learning">
+                <div class="timeline-icon">📚</div>
+                <div class="timeline-label">First Code</div>
+            </div>
+            <div class="timeline-point" data-year="Present">
+                <div class="timeline-icon">💻</div>
+                <div class="timeline-label">Career</div>
+            </div>
+        </div>
+
+        <div class="bubble hover-effect">
+            <span class="stars">⭐</span>
+            <span class="code">&lt;/&gt;</span>
+            <span class="snippet">{ }</span>
+        </div>
+        <div class="message hover-effect">Thank you, Dad.</div>
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="fireworks-container">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+          </div>
+    </div>
+
+    <div class="quote">
+        <p>"This will open doors to your future."</p>
+        <span class="quote-attribution">- Dad</span>
+    </div>
+
+    <div class="scene-toggle">
+        <button class="scene-btn active" data-scene="gift">The Gift</button>
+        <button class="scene-btn" data-scene="learning">Learning</button>
+        <button class="scene-btn" data-scene="career">Career</button>
+    </div>
+
+    <div class="sr-only" aria-live="polite" id="scene-description">
+        A tribute scene showing a father giving a laptop to a child, representing the gift that sparked a coding
+        journey.
+    </div>
+
+    <script>
+        // --- DOM Element Selection ---
+        const sceneButtons = document.querySelectorAll('.scene-btn');
+        const scene = document.querySelector('.scene');
+        const quoteElement = document.querySelector('.quote p');
+        const photoFrame = document.querySelector('.photo-frame');
+        const photoCaption = document.querySelector('.photo-caption');
+        const codeElement = document.getElementById('changing-code');
+
+        // --- State Management ---
+        const quotes = {
+            gift: '"This will open doors to your future."',
+            learning: '"Keep practicing, you\'re getting better every day."',
+            career: '"I knew you could do it. I\'m proud of you."'
+        };
+
+        const codeSnippetsByScene = {
+            gift: [
+                "//Thank you Dad", "function thanks() {\n  return '♥';\n}", "class Gift {\n  inspire();\n}",
+                "/* Code\n   Dreams */", "if(dad) {\n  ♥++;\n}", "//Forever\n//Grateful"
+            ],
+            learning: [
+                "for(let i=0;\ni<1000; i++) {\n  practice();\n}", "function debug() {\n  neverGiveUp();\n}",
+                "try {\n  code();\n} catch {\n  learnMore();\n}", "/* Learning\n   Journey */", "while(true) {\n  improve();\n}"
+            ],
+            career: [
+                "class Developer {\n  succeed();\n}", "export const\n  future =\n  'bright';", "// Dreams\n// Achieved",
+                "function career() {\n  return dad.gift;\n}", "/* Thank\n   You */", "// Full\n// Circle"
+            ]
+        };
+
+        const captionsByScene = {
+            gift: "First day with my laptop",
+            learning: "Late nights learning to code",
+            career: "Graduation day - thanks to you"
+        };
+
+        let codeSnippets = [...codeSnippetsByScene.gift];
+        let currentIndex = 0;
+
+        // --- Accessibility Setup ---
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            document.body.classList.add('reduce-motion');
+        }
+
+        document.querySelector('.laptop').setAttribute('aria-label', 'Laptop with changing code snippets');
+        document.querySelector('.bubble').setAttribute('aria-label', 'Thought bubble with coding symbols');
+        document.querySelector('.message').setAttribute('aria-label', 'Thank you message to dad');
+        document.querySelector('.quote').setAttribute('aria-label', 'Quote from dad');
+        photoFrame.setAttribute('aria-label', 'Photo frame with memory');
+
+        // --- Event Listeners ---
+        sceneButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const sceneName = button.getAttribute('data-scene');
+                handleSceneChange(sceneName, button);
+            });
+        });
+
+        photoFrame.addEventListener('click', function () {
+            this.classList.toggle('flipped');
+        });
+
+        // --- Functions ---
+        function handleSceneChange(sceneName, activeButton) {
+            sceneButtons.forEach(btn => btn.classList.remove('active'));
+            activeButton.classList.add('active');
+
+            scene.setAttribute('data-active-scene', sceneName);
+            quoteElement.textContent = quotes[sceneName];
+
+            updateCodeSnippetsForScene(sceneName);
+            photoCaption.textContent = captionsByScene[sceneName];
+        }
+
+        function updateCodeSnippetsForScene(sceneName) {
+            codeSnippets = [...codeSnippetsByScene[sceneName]];
+            currentIndex = 0;
+            codeElement.textContent = codeSnippets[0] || ""; // Ensure there's always content
+        }
+
+        function updateCodeSnippet() {
+            codeElement.style.opacity = 0;
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % codeSnippets.length;
+                codeElement.textContent = codeSnippets[currentIndex];
+                codeElement.style.opacity = 1;
+            }, 500);
+        }
+
+        // --- Initializer ---
+        // Set initial content and start interval
+        if (codeSnippets.length > 0) {
+            codeElement.textContent = codeSnippets[0];
+            setInterval(updateCodeSnippet, 4000);
+        }
+    </script>
+</body>
+
+</html>
