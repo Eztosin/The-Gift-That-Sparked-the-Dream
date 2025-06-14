@@ -1,204 +1,297 @@
 /* ==========================================================================
    1. General Setup & Resets
    ========================================================================== */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Courier New', monospace;
-    background: linear-gradient(45deg, #1a2a3a, #000000, #2a1a3a);
-    background-size: 400% 400%;
-    height: 100vh;
-    overflow: hidden;
-    color: white;
-    animation: gradientBG 15s ease infinite;
+  font-family: "Courier New", monospace;
+  background: linear-gradient(45deg, #1a2a3a, #000000, #2a1a3a);
+  background-size: 400% 400%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  animation: gradientBG 15s ease infinite;
 }
 
 /* Reduced motion preferences */
 .reduce-motion * {
-    animation-duration: 0.001s !important;
-    transition-duration: 0.001s !important;
+  animation-duration: 0.001s !important;
+  transition-duration: 0.001s !important;
 }
 
 /* ==========================================================================
    2. Accessibility
    ========================================================================== */
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ==========================================================================
    3. Keyframe Animations
    ========================================================================== */
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.2; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 @keyframes fatherSway {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 @keyframes fatherRightArm {
-    0% { transform: rotate(-5deg); }
-    50% { transform: rotate(-15deg); }
-    100% { transform: rotate(-5deg); }
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
 }
 
 @keyframes fatherLeftArm {
-    0% { transform: rotate(5deg); }
-    50% { transform: rotate(15deg); }
-    100% { transform: rotate(5deg); }
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
 }
 
 @keyframes childBounce {
-    0%, 100% { transform: scaleX(-1) translateY(0); }
-    50% { transform: scaleX(-1) translateY(-3px); }
+  0%,
+  100% {
+    transform: scaleX(-1) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) translateY(-3px);
+  }
 }
 
 @keyframes childRightArm {
-    0% { transform: rotate(10deg); }
-    50% { transform: rotate(25deg); }
-    100% { transform: rotate(10deg); }
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
 }
 
 @keyframes childLeftArm {
-    0% { transform: rotate(-5deg); }
-    50% { transform: rotate(-15deg); }
-    100% { transform: rotate(-10deg); }
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
 }
 
 @keyframes laptopFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes laptopGlow {
-    0%, 100% { box-shadow: 0 0 15px var(--glow-color); }
-    50% { box-shadow: 0 0 25px var(--glow-color); }
+  0%,
+  100% {
+    box-shadow: 0 0 15px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--glow-color);
+  }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 180px; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 180px;
+  }
 }
 
 @keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: white; }
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse-ring {
-    0% {
-        width: 30px;
-        height: 30px;
-        border: 2px solid rgba(0, 240, 255, 0.5);
-        opacity: 0.5;
-    }
-    100% {
-        width: 100px;
-        height: 100px;
-        border: 2px solid rgba(0, 240, 255, 0);
-        opacity: 0;
-    }
+  0% {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(0, 240, 255, 0.5);
+    opacity: 0.5;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(0, 240, 255, 0);
+    opacity: 0;
+  }
 }
-
 
 /* ==========================================================================
    4. Scene Layout & Background
    ========================================================================== */
 .scene {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 200px;
-    overflow: hidden;
-    z-index: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .platform-shadow {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 15px;
-    background: linear-gradient(to bottom, rgba(60, 70, 80, 0.8), rgba(40, 50, 60, 0.5));
-    border-radius: 50%;
-    filter: blur(5px);
-    z-index: -1;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(60, 70, 80, 0.8),
+    rgba(40, 50, 60, 0.5)
+  );
+  border-radius: 50%;
+  filter: blur(5px);
+  z-index: -1;
 }
 
-.scene::before { /* Floor element */
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    background: linear-gradient(to top, rgba(30, 40, 50, 0.8), transparent);
-    z-index: -2;
+.scene::before {
+  /* Floor element */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(30, 40, 50, 0.8), transparent);
+  z-index: -2;
 }
 
-.scene::after { /* Subtle wall element */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
-    z-index: -1;
+.scene::after {
+  /* Subtle wall element */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: -1;
 }
 
 .star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle 2s infinite;
-    z-index: -1;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+  z-index: -1;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
 
 /* ==========================================================================
@@ -206,694 +299,823 @@ body {
    ========================================================================== */
 /* --- Father Figure --- */
 .father {
-    width: 60px;
-    height: 100px;
-    border-radius: 20px 20px 0 0;
-    position: relative;
-    left: 30px;
-    animation: fatherSway 3s ease-in-out infinite;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    /* Clothes Layered over Skin */
-    background: 
-        /* Layer 1: Shirt (Olive Green) */
-        linear-gradient(#556B2F, #556B2F 60%, transparent 60%),
-        /* Layer 2: Pants (Dark Brown) */
-        linear-gradient(transparent, transparent 60%, #463d3d 60%),
-        /* Layer 3: Skin (Original Color) */
-        #7b5e3c;
+  width: 60px;
+  height: 100px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  left: 30px;
+  animation: fatherSway 3s ease-in-out infinite;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  /* Clothes Layered over Skin */
+  background: 
+        /* Layer 1: Shirt (Olive Green) */ linear-gradient(
+      #556b2f,
+      #556b2f 60%,
+      transparent 60%
+    ),
+    /* Layer 2: Pants (Dark Brown) */
+      linear-gradient(transparent, transparent 60%, #463d3d 60%),
+    /* Layer 3: Skin (Original Color) */ #7b5e3c;
 }
 
-.father::before { /* Head */
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 5px;
-    width: 50px;
-    height: 50px;
-    background: #4d3319;
-    border-radius: 50%;
+.father::before {
+  /* Head */
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #4d3319;
+  border-radius: 50%;
 }
 
-.father::after { /* Face */
-    content: "◠‿◠";
-    position: absolute;
-    top: -35px;
-    left: 10px;
-    font-size: 18px;
-    color: #fff;
+.father::after {
+  /* Face */
+  content: "◠‿◠";
+  position: absolute;
+  top: -35px;
+  left: 10px;
+  font-size: 18px;
+  color: #fff;
 }
 
 .father .right-arm,
 .father .left-arm {
-    width: 70px;
-    height: 10px;
-    background: #556B2F; /* Sleeves to match shirt */
-    position: absolute;
-    border-radius: 10px;
-    z-index: 2;
+  width: 70px;
+  height: 10px;
+  background: #556b2f; /* Sleeves to match shirt */
+  position: absolute;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .father .right-arm {
-    top: 50px;
-    right: -40px;
-    transform-origin: left center;
-    transform: rotate(-5deg);
-    animation: fatherRightArm 3s ease-in-out infinite;
+  top: 50px;
+  right: -40px;
+  transform-origin: left center;
+  transform: rotate(-5deg);
+  animation: fatherRightArm 3s ease-in-out infinite;
 }
 
 .father .left-arm {
-    top: 30px;
-    left: 30px;
-    transform-origin: right center;
-    transform: rotate(5deg);
-    animation: fatherLeftArm 3s ease-in-out infinite;
+  top: 30px;
+  left: 30px;
+  transform-origin: right center;
+  transform: rotate(5deg);
+  animation: fatherLeftArm 3s ease-in-out infinite;
 }
 
 .father .right-leg,
 .father .left-leg {
-    width: 15px;
-    height: 40px;
-    background: #463d3d; /* Trousers to match pants */
-    position: absolute;
-    bottom: -40px;
-    border-radius: 0 0 5px 5px;
+  width: 15px;
+  height: 40px;
+  background: #463d3d; /* Trousers to match pants */
+  position: absolute;
+  bottom: -40px;
+  border-radius: 0 0 5px 5px;
 }
 
-.father .right-leg { right: 10px; }
-.father .left-leg { left: 10px; }
+.father .right-leg {
+  right: 10px;
+}
+.father .left-leg {
+  left: 10px;
+}
 
 /* --- Child Figure --- */
 .child {
-    width: 50px;
-    height: 90px;
-    border-radius: 20px 20px 0 0;
-    position: relative;
-    left: -30px;
-    transform: scaleX(-1);
-    animation: childBounce 2s ease-in-out infinite;
-    transition: transform 0.8s ease, left 0.8s ease, background 0.8s ease;
-    /* Clothes Layered over Skin */
-    background: 
-        /* Layer 1: Shirt (Red) */
-        linear-gradient(#B22222, #B22222 55%, transparent 55%),
-        /* Layer 2: Pants (Blue) */
-        linear-gradient(transparent, transparent 55%, #3A5E8C 55%),
-        /* Layer 3: Skin (Original Color) */
-        #b0845f;
+  width: 50px;
+  height: 90px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  left: -30px;
+  transform: scaleX(-1);
+  animation: childBounce 2s ease-in-out infinite;
+  transition: transform 0.8s ease, left 0.8s ease, background 0.8s ease;
+  /* Clothes Layered over Skin */
+  background: 
+        /* Layer 1: Shirt (Red) */ linear-gradient(
+      #b22222,
+      #b22222 55%,
+      transparent 55%
+    ),
+    /* Layer 2: Pants (Blue) */
+      linear-gradient(transparent, transparent 55%, #3a5e8c 55%),
+    /* Layer 3: Skin (Original Color) */ #b0845f;
 }
 
-.child::before { /* Head */
-    content: "";
-    position: absolute;
-    top: -40px;
-    left: 0px;
-    width: 50px;
-    height: 50px;
-    background: #8e5a36;
-    border-radius: 50%;
+.child::before {
+  /* Head */
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  background: #8e5a36;
+  border-radius: 50%;
 }
 
-.child::after { /* Face */
-    content: "^ᴗ^";
-    position: absolute;
-    top: -30px;
-    left: 15px;
-    font-size: 18px;
-    color: #fff;
-    transform: scaleX(-1);
+.child::after {
+  /* Face */
+  content: "^ᴗ^";
+  position: absolute;
+  top: -30px;
+  left: 15px;
+  font-size: 18px;
+  color: #fff;
+  transform: scaleX(-1);
 }
 
 .child .right-arm,
 .child .left-arm {
-    width: 70px;
-    height: 10px;
-    background: #B22222; /* Sleeves to match shirt */
-    position: absolute;
-    border-radius: 8px;
-    transition: transform 0.8s ease, background 0.8s ease, width 0.8s ease, right 0.8s ease, top 0.8s ease, left 0.8s ease;
+  width: 70px;
+  height: 10px;
+  background: #b22222; /* Sleeves to match shirt */
+  position: absolute;
+  border-radius: 8px;
+  transition: transform 0.8s ease, background 0.8s ease, width 0.8s ease,
+    right 0.8s ease, top 0.8s ease, left 0.8s ease;
 }
 
 .child .right-arm {
-    top: 9px;
-    right: -45px;
-    width: 75px;
-    transform-origin: left center;
-    transform: rotate(10deg);
-    animation: childRightArm 3s ease-in-out infinite;
+  top: 9px;
+  right: -45px;
+  width: 75px;
+  transform-origin: left center;
+  transform: rotate(10deg);
+  animation: childRightArm 3s ease-in-out infinite;
 }
 
 .child .left-arm {
-    top: 30px;
-    left: 25px;
-    width: 75px;
-    transform-origin: right center;
-    transform: rotate(-10deg);
-    animation: childLeftArm 3s ease-in-out infinite;
-    z-index: 2;
+  top: 30px;
+  left: 25px;
+  width: 75px;
+  transform-origin: right center;
+  transform: rotate(-10deg);
+  animation: childLeftArm 3s ease-in-out infinite;
+  z-index: 2;
 }
 
 .child .right-leg,
 .child .left-leg {
-    width: 12px;
-    height: 40px;
-    background: #3A5E8C; /* Jeans to match pants */
-    position: absolute;
-    bottom: -30px;
-    border-radius: 0 0 5px 5px;
-    transition: background 0.8s ease, height 0.8s ease, width 0.8s ease;
+  width: 12px;
+  height: 40px;
+  background: #3a5e8c; /* Jeans to match pants */
+  position: absolute;
+  bottom: -30px;
+  border-radius: 0 0 5px 5px;
+  transition: background 0.8s ease, height 0.8s ease, width 0.8s ease;
 }
 
-.child .right-leg { right: 10px; }
-.child .left-leg { left: 10px; }
+.child .right-leg {
+  right: 10px;
+}
+.child .left-leg {
+  left: 10px;
+}
 
 /* ==========================================================================
    6. Interactive Elements
    ========================================================================== */
 /* --- Laptop --- */
 .laptop {
-    width: 60px;
-    height: 50px;
-    background: #1a1a1a;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    margin-top: -140px;
-    margin-left: -30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 0 20px #00f0ff;
-    animation: laptopGlow 2s infinite, laptopFloat 3s ease-in-out infinite;
-    z-index: 3;
-    transition: transform 0.8s ease, opacity 0.8s ease;
+  width: 60px;
+  height: 50px;
+  background: #1a1a1a;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #00f0ff;
+  animation: laptopGlow 2s infinite, laptopFloat 3s ease-in-out infinite;
+  z-index: 3;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-.laptop::before { /* Top edge of laptop */
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: #333;
-    border-radius: 5px 5px 0 0;
+.laptop::before {
+  /* Top edge of laptop */
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #333;
+  border-radius: 5px 5px 0 0;
 }
 
 .screen {
-    width: 100%;
-    height: 100%;
-    padding: 3px;
-    color: #00ffcc;
-    font-family: 'Courier New', monospace;
-    font-size: 6px;
-    text-align: left;
-    white-space: pre-wrap;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  color: #00ffcc;
+  font-family: "Courier New", monospace;
+  font-size: 6px;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .code-snippet {
-    margin: 0;
-    max-width: 100%;
-    max-height: 100%;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 /* --- Thought Bubble --- */
 .bubble {
-    position: absolute;
-    top: 15%;
-    left: 450px;
-    transform: translateX(0);
-    background: var(--bubble-bg);
-    padding: 10px 20px;
-    border-radius: 50px;
-    display: flex;
-    gap: 10px;
-    font-size: 20px;
-    backdrop-filter: blur(5px);
-    animation: float var(--animation-medium) ease-in-out infinite;
-    z-index: 6;
+  position: absolute;
+  top: 15%;
+  left: calc(50% + 100px);
+  transform: translateX(-50%);
+  background: var(--bubble-bg);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  backdrop-filter: blur(5px);
+  animation: float var(--animation-medium) ease-in-out infinite;
+  z-index: 6;
 }
 
 .bubble::before,
 .bubble::after {
-    content: "";
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
 }
 
-.bubble::before { bottom: -15px; left: 60%; transform: translateX(-50%); width: 20px; height: 20px; }
-.bubble::after { bottom: -30px; left: 50%; transform: translateX(-50%); width: 10px; height: 10px; }
+.bubble::before {
+  bottom: -15px;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+}
+.bubble::after {
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+}
 
-.bubble .stars { animation: spin 3s linear infinite; display: inline-block; }
-.bubble .heart { color: #ff4d6d; animation: pulse 1.5s ease-in-out infinite; display: inline-block; }
+.bubble .stars {
+  animation: spin 3s linear infinite;
+  display: inline-block;
+}
+.bubble .heart {
+  color: #ff4d6d;
+  animation: pulse 1.5s ease-in-out infinite;
+  display: inline-block;
+}
 
 /* --- Message & Quote --- */
 .message {
-    position: absolute;
-    bottom: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    animation: typing 4s steps(15, end) forwards, blink-caret 0.75s step-end infinite;
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  animation: typing 4s steps(15, end) forwards,
+    blink-caret 0.75s step-end infinite;
 }
 
 .quote {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: white;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out 3s forwards;
-    z-index: 15;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Georgia", serif;
+  font-style: italic;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 3s forwards;
+  z-index: 15;
 }
 
 .quote p {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-    background: rgba(0, 0, 0, 0.4);
-    padding: 5px 10px;
-    border-radius: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .quote-attribution {
-    font-size: 0.9rem;
-    opacity: 0.8;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 /* --- Photo Frame --- */
 .photo-frame {
-    position: absolute;
-    top: 15%;
-    right: 10%;
-    width: 150px;
-    height: 180px;
-    background: linear-gradient(45deg, #d4af37, #f5e7a3, #d4af37);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    transform: rotate(5deg);
-    opacity: 0;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    z-index: 10;
-    cursor: pointer;
-    transform-style: preserve-3d;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 150px;
+  height: 180px;
+  background: linear-gradient(45deg, #d4af37, #f5e7a3, #d4af37);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 10;
+  cursor: pointer;
+  transform-style: preserve-3d;
 }
 
-.photo-frame.flipped { transform: rotate(5deg) rotateY(180deg); }
+.photo-frame.flipped {
+  transform: rotate(5deg) rotateY(180deg);
+}
 
 .photo-inner {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-.photo-frame.flipped .photo-inner { transform: rotateY(180deg); }
+.photo-frame.flipped .photo-inner {
+  transform: rotateY(180deg);
+}
 
-.photo-frame::after { /* Back of photo */
-    content: "Dad's advice: Never stop learning";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f5e7a3;
-    color: #333;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+.photo-frame::after {
+  /* Back of photo */
+  content: "Dad's advice: Never stop learning";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5e7a3;
+  color: #333;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .photo-memory {
-    flex: 1;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="130" viewBox="0 0 150 130"><rect width="150" height="130" fill="%23333"/><rect x="20" y="20" width="110" height="90" fill="none" stroke="%23fff" stroke-width="2"/><circle cx="50" cy="45" r="8" fill="%23fff"/><circle cx="100" cy="45" r="8" fill="%23fff"/><path d="M50 85 Q 75 100, 100 85" stroke="%23fff" stroke-width="2" fill="none"/><rect x="60" y="10" width="30" height="20" fill="%23555"/><rect x="70" y="30" width="10" height="10" fill="%23555"/></svg>');
-    background-size: cover;
-    background-position: center;
-    transition: background 0.5s ease;
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="130" viewBox="0 0 150 130"><rect width="150" height="130" fill="%23333"/><rect x="20" y="20" width="110" height="90" fill="none" stroke="%23fff" stroke-width="2"/><circle cx="50" cy="45" r="8" fill="%23fff"/><circle cx="100" cy="45" r="8" fill="%23fff"/><path d="M50 85 Q 75 100, 100 85" stroke="%23fff" stroke-width="2" fill="none"/><rect x="60" y="10" width="30" height="20" fill="%23555"/><rect x="70" y="30" width="10" height="10" fill="%23555"/></svg>');
+  background-size: cover;
+  background-position: center;
+  transition: background 0.5s ease;
 }
 
 .photo-caption {
-    padding: 8px;
-    font-family: 'Georgia', serif;
-    font-size: 12px;
-    color: #fff;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  font-family: "Georgia", serif;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* --- Timeline --- */
 .timeline {
-    position: absolute;
-    bottom: 100px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 1;
-    opacity: 0.7;
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+  opacity: 0.7;
 }
 
 .timeline-point {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    opacity: 0.7;
-    transition: opacity var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
 }
 
-.timeline-point:hover { opacity: 1; }
+.timeline-point:hover {
+  opacity: 1;
+}
 
 .timeline-icon {
-    width: 30px;
-    height: 30px;
-    background: var(--bubble-bg);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  width: 30px;
+  height: 30px;
+  background: var(--bubble-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .timeline-label {
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .timeline-point::before {
-    content: attr(data-year);
-    position: absolute;
-    left: -60px;
-    font-size: 10px;
-    color: var(--primary-color);
-    opacity: 0;
-    transition: opacity var(--transition-fast);
+  content: attr(data-year);
+  position: absolute;
+  left: -60px;
+  font-size: 10px;
+  color: var(--primary-color);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
-.timeline-point:hover::before { opacity: 1; }
-
+.timeline-point:hover::before {
+  opacity: 1;
+}
 
 /* --- Scene Toggle Buttons --- */
 .scene-toggle {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 20;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
 }
 
 .scene-btn {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .scene-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
 }
 
 .scene-btn.active {
-    background: rgba(0, 240, 255, 0.5);
-    border-color: #00f0ff;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+  background: rgba(0, 240, 255, 0.5);
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
 }
-
 
 /* ==========================================================================
    7. Scene States & Transitions
    ========================================================================== */
 .scene[data-active-scene="gift"] .father,
 .scene[data-active-scene="gift"] .child {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* --- Learning Scene --- */
 .scene[data-active-scene="learning"] .father {
-    opacity: 0.01;
-    transform: translateX(-150px) scale(0.8);
+  opacity: 0.01;
+  transform: translateX(-150px) scale(0.8);
 }
 
 .scene[data-active-scene="learning"] .child {
-    left: -10%;
-    transform: scaleX(-1) scale(1);
+  left: -10%;
+  transform: scaleX(-1) scale(1);
 }
 
 .scene[data-active-scene="learning"] .child .right-leg,
 .scene[data-active-scene="learning"] .child .left-leg {
-    height: 32px;
-    bottom: -32px;
+  height: 32px;
+  bottom: -32px;
 }
 
 .scene[data-active-scene="learning"] .child .right-arm {
-    transform: rotate(35deg);
-    top: 18px;
-    right: -25px;
-    width: 40px;
+  transform: rotate(35deg);
+  top: 18px;
+  right: -25px;
+  width: 40px;
 }
 
 .scene[data-active-scene="learning"] .child .left-arm {
-    transform: rotate(-35deg);
-    top: 18px;
-    left: 30px;
-    width: 40px;
+  transform: rotate(-35deg);
+  top: 18px;
+  left: 30px;
+  width: 40px;
 }
 
 .scene[data-active-scene="learning"] .laptop {
-    transform: translateY(10px) scale(1.1);
-    left: 47%;
+  transform: translateY(10px) scale(1.1);
+  left: 47%;
 }
 
 .scene[data-active-scene="learning"] .platform-shadow {
-    width: 200px;
-    left: 45%;
+  width: 200px;
+  left: 45%;
 }
 
 /* --- Career Scene --- */
-.scene[data-active-scene="career"] .father { opacity: 0; }
+.scene[data-active-scene="career"] .father {
+  opacity: 0;
+}
 
 .scene[data-active-scene="career"] .child {
-    transform: scaleX(1) scale(1.2);
-    left: -20%;
-    background: #2c3e50; /* Dark suit color */
-    position: relative;
+  transform: scaleX(1) scale(1.2);
+  left: -20%;
+  background: #2c3e50; /* Dark suit color */
+  position: relative;
 }
 
 .scene[data-active-scene="career"] .child .right-leg,
 .scene[data-active-scene="career"] .child .left-leg,
 .scene[data-active-scene="career"] .child .right-arm,
 .scene[data-active-scene="career"] .child .left-arm {
-    background: #2c3e50; /* Dark suit color */
+  background: #2c3e50; /* Dark suit color */
 }
 
 .scene[data-active-scene="career"] .child .right-leg,
 .scene[data-active-scene="career"] .child .left-leg {
-    height: 35px;
-    bottom: -35px;
-    width: 14px;
+  height: 35px;
+  bottom: -35px;
+  width: 14px;
 }
 
 .scene[data-active-scene="career"] .child .right-arm {
-    width: 25px;
-    height: 40px;
-    top: 5px;
-    right: -5px;
-    border-radius: 8px;
-    transform: rotate(5deg);
-    animation: none;
-    z-index: 1;
+  width: 25px;
+  height: 40px;
+  top: 5px;
+  right: -5px;
+  border-radius: 8px;
+  transform: rotate(5deg);
+  animation: none;
+  z-index: 1;
 }
 
 .scene[data-active-scene="career"] .child .left-arm {
-    width: 25px;
-    height: 40px;
-    top: 5px;
-    left: -5px;
-    border-radius: 8px;
-    transform: rotate(5deg);
-    animation: none;
-    z-index: 1;
+  width: 25px;
+  height: 40px;
+  top: 5px;
+  left: -5px;
+  border-radius: 8px;
+  transform: rotate(5deg);
+  animation: none;
+  z-index: 1;
 }
 
 .scene[data-active-scene="career"] .laptop {
-    transform: translateY(20px) scale(0.9);
-    opacity: 0.01;
+  transform: translateY(20px) scale(0.9);
+  opacity: 0.01;
 }
 
 .scene[data-active-scene="career"] .platform-shadow {
-    width: 150px;
-    left: 45%;
+  width: 150px;
+  left: 45%;
 }
 
 /* --- Photo Frame Scene States --- */
 .scene[data-active-scene="gift"] .photo-frame {
-    opacity: 0;
-    transform: rotate(5deg) translateX(50px);
+  opacity: 0;
+  transform: rotate(5deg) translateX(50px);
 }
 
 .scene[data-active-scene="learning"] .photo-frame,
 .scene[data-active-scene="career"] .photo-frame {
-    opacity: 0.9;
-    transform: rotate(5deg) translateX(0);
+  opacity: 0.9;
+  transform: rotate(5deg) translateX(0);
 }
 
 .scene[data-active-scene="career"] .photo-frame {
-    transform: rotate(-3deg) translateX(0) translateY(20px) scale(1.1);
+  transform: rotate(-3deg) translateX(0) translateY(20px) scale(1.1);
 }
 
 /* --- Hide bubble on learning and career pages --- */
 .scene[data-active-scene="learning"] .bubble,
 .scene[data-active-scene="career"] .bubble {
-    display: none;
+  display: none;
 }
-
 
 /* ==========================================================================
    8. Effects & Enhancements
    ========================================================================== */
 .hover-effect {
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .laptop.hover-effect:hover {
-    transform: scale(1.1) translateY(-8px);
-    box-shadow: 0 0 30px var(--glow-color);
-    cursor: pointer;
+  transform: scale(1.1) translateY(-8px);
+  box-shadow: 0 0 30px var(--glow-color);
+  cursor: pointer;
 }
 
 .bubble.hover-effect:hover {
-    transform: translateX(-50%) translateY(-15px) scale(1.05);
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
+  transform: translateX(-50%) translateY(-15px) scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 .message.hover-effect:hover {
-    text-shadow: 0 0 8px var(--text-color);
-    letter-spacing: 1px;
-    cursor: pointer;
+  text-shadow: 0 0 8px var(--text-color);
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .particles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .particles::before,
 .particles::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: transparent;
-    animation: pulse-ring var(--animation-medium) linear infinite;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  animation: pulse-ring var(--animation-medium) linear infinite;
 }
 
 .particles::after {
-    animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 /* ==========================================================================
    9. Responsive Design
    ========================================================================== */
 @media (max-width: 768px) {
-    .scene { gap: 100px; }
-    .platform-shadow { width: 250px; }
-    .father { transform: scale(0.9); left: 15px; }
-    .child { transform: scaleX(-1) scale(0.9); left: -15px; }
-    .photo-frame { width: 120px; height: 150px; right: 5%; }
-    .bubble { top: 10%; left: 50%; transform: translateX(-50%); font-size: 16px; padding: 8px 16px; }
-    .timeline { right: 10px; bottom: 80px; gap: 15px; }
-    .timeline-icon { width: 25px; height: 25px; font-size: 14px; }
-    .timeline-label { font-size: 10px; }
+  .scene {
+    gap: 100px;
+  }
+  .platform-shadow {
+    width: 250px;
+  }
+  .father {
+    transform: scale(0.9);
+    left: 15px;
+  }
+  .child {
+    transform: scaleX(-1) scale(0.9);
+    left: -15px;
+  }
+  .photo-frame {
+    width: 120px;
+    height: 150px;
+    right: 5%;
+  }
+  .bubble {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  .timeline {
+    right: 10px;
+    bottom: 80px;
+    gap: 15px;
+  }
+  .timeline-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+  .timeline-label {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .scene { flex-direction: column; gap: 20px; }
-    .platform-shadow { width: 200px; }
-    .photo-frame { width: 100px; height: 120px; top: 10%; right: 5%; }
-    .photo-caption { font-size: 10px; padding: 5px; }
-    .message { bottom: 130px; font-size: 1rem; }
-    .quote { top: 82%; }
-    .scene-toggle { bottom: 15px; }
-    .father { transform: scale(0.8); top: 100px; left: 30px; }
-    .child { transform: scaleX(-1) scale(0.8); top: 100px; left: -30px; }
-    .laptop { top: 55%; }
-    .bubble { top: 5%; padding: 6px 12px; font-size: 14px; }
-    .timeline { bottom: 60px; gap: 10px; }
-    .quote { top: 75%; }
-    .quote p { font-size: 0.9rem; }
-    .scene-toggle { flex-direction: column; bottom: 15px; gap: 5px; }
-    .scene-btn { padding: 5px 10px; font-size: 12px; }
-    
-    @keyframes typing {
-        from { width: 0; }
-        to { width: 150px; }
+  .scene {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .platform-shadow {
+    width: 200px;
+  }
+  .photo-frame {
+    width: 100px;
+    height: 120px;
+    top: 10%;
+    right: 5%;
+  }
+  .photo-caption {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .message {
+    bottom: 130px;
+    font-size: 1rem;
+  }
+  .quote {
+    top: 82%;
+  }
+  .scene-toggle {
+    bottom: 15px;
+  }
+  .father {
+    transform: scale(0.8);
+    top: 100px;
+    left: 30px;
+  }
+  .child {
+    transform: scaleX(-1) scale(0.8);
+    top: 100px;
+    left: -30px;
+  }
+  .laptop {
+    top: 55%;
+  }
+  .bubble {
+    top: 5%;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .timeline {
+    bottom: 60px;
+    gap: 10px;
+  }
+  .quote {
+    top: 75%;
+  }
+  .quote p {
+    font-size: 0.9rem;
+  }
+  .scene-toggle {
+    flex-direction: column;
+    bottom: 15px;
+    gap: 5px;
+  }
+  .scene-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
     }
+    to {
+      width: 150px;
+    }
+  }
 }
 /* ==========================================================================
    10. Looping Fireworks Effect (Career Page)
    ========================================================================== */
 
-   .fireworks-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
+.fireworks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
 }
 
 /*
@@ -903,12 +1125,12 @@ body {
   - It waits for the loop to restart
 */
 .firework {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    /* The animation now loops infinitely over a 4-second cycle */
-    animation: launch-loop 4s infinite;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  /* The animation now loops infinitely over a 4-second cycle */
+  animation: launch-loop 4s infinite;
 }
 
 /*
@@ -918,48 +1140,46 @@ body {
   - It fades and waits for the loop to restart
 */
 .firework::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    /* The box-shadows create the particles, color is inherited from the parent */
-    box-shadow: 
-      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 
-      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 
-      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
-    color: inherit;
-    /* This animation also loops infinitely over the same 4-second cycle */
-    animation: burst-loop 4s infinite;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* The box-shadows create the particles, color is inherited from the parent */
+  box-shadow: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+    0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  color: inherit;
+  /* This animation also loops infinitely over the same 4-second cycle */
+  animation: burst-loop 4s infinite;
 }
 
 /* --- Individual Firework Instances --- */
 /* Each firework is staggered with a different animation-delay */
 
 .firework:nth-child(1) {
-    left: 20%;
-    bottom: 0;
-    animation-delay: 0s;
-    background-color: #ff6ec7; /* Pink */
-    color: #ff6ec7;
+  left: 20%;
+  bottom: 0;
+  animation-delay: 0s;
+  background-color: #ff6ec7; /* Pink */
+  color: #ff6ec7;
 }
 
 .firework:nth-child(2) {
-    left: 80%;
-    bottom: 0;
-    animation-delay: 1.5s;
-    background-color: #adff2f; /* Green */
-    color: #adff2f;
+  left: 80%;
+  bottom: 0;
+  animation-delay: 1.5s;
+  background-color: #adff2f; /* Green */
+  color: #adff2f;
 }
 
 .firework:nth-child(3) {
-    left: 50%;
-    bottom: 0;
-    animation-delay: 2.5s;
-    background-color: #00f0ff; /* Cyan */
-    color: #00f0ff;
+  left: 50%;
+  bottom: 0;
+  animation-delay: 2.5s;
+  background-color: #00f0ff; /* Cyan */
+  color: #00f0ff;
 }
 
 .firework:nth-child(4) {
@@ -986,60 +1206,61 @@ body {
   color: #e4e716;
 }
 
-
 /* --- NEW Looping Keyframe Animations --- */
 
 @keyframes launch-loop {
-    /* Stage 1: The Launch (0% to 25% of the 4s loop = 1s) */
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    25% {
-        /* Reaches peak altitude */
-        transform: translateY(-300px);
-        opacity: 1;
-    }
-    /* Stage 2: Disappear and Reset (26% to 100%) */
-    26% {
-        /* Disappears instantly after reaching the peak */
-        opacity: 0;
-    }
-    100% {
-        /* Stays hidden at the bottom, ready for the next loop */
-        transform: translateY(0);
-        opacity: 0;
-    }
+  /* Stage 1: The Launch (0% to 25% of the 4s loop = 1s) */
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  25% {
+    /* Reaches peak altitude */
+    transform: translateY(-300px);
+    opacity: 1;
+  }
+  /* Stage 2: Disappear and Reset (26% to 100%) */
+  26% {
+    /* Disappears instantly after reaching the peak */
+    opacity: 0;
+  }
+  100% {
+    /* Stays hidden at the bottom, ready for the next loop */
+    transform: translateY(0);
+    opacity: 0;
+  }
 }
 
 @keyframes burst-loop {
-    /* Stage 1: Wait (0% to 25%) */
-    0%, 25% {
-        opacity: 0;
-        /* All particles are at the center, but invisible */
-        box-shadow: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
-    }
-    /* Stage 2: The Burst (26% to 50% of the 4s loop = ~1s) */
-    26% {
-        /* Appears instantly at the launch peak */
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-        /* Particles have spread out to their final positions */
-        box-shadow: 
-          38px -7px, 55px 14px, 12px 45px, -30px 53px, -20px -20px, -58px -33px, -36px 1px, 
-          -33px 25px, 2px -39px, -23px -52px, 5px 23px, 52px -16px, 19px -39px, -4px 10px, 
-          -54px 4px, 33px -20px, -6px -27px, -58px 29px, 44px 4px, -49px -15px, 23px 29px, 
-          -19px 4px, -11px -53px, 32px 50px;
-    }
-    /* Stage 3: Stay hidden (51% to 100%) */
-    100% {
-        opacity: 0;
-    }
+  /* Stage 1: Wait (0% to 25%) */
+  0%,
+  25% {
+    opacity: 0;
+    /* All particles are at the center, but invisible */
+    box-shadow: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  /* Stage 2: The Burst (26% to 50% of the 4s loop = ~1s) */
+  26% {
+    /* Appears instantly at the launch peak */
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    /* Particles have spread out to their final positions */
+    box-shadow: 38px -7px, 55px 14px, 12px 45px, -30px 53px, -20px -20px,
+      -58px -33px, -36px 1px, -33px 25px, 2px -39px, -23px -52px, 5px 23px,
+      52px -16px, 19px -39px, -4px 10px, -54px 4px, 33px -20px, -6px -27px,
+      -58px 29px, 44px 4px, -49px -15px, 23px 29px, -19px 4px, -11px -53px,
+      32px 50px;
+  }
+  /* Stage 3: Stay hidden (51% to 100%) */
+  100% {
+    opacity: 0;
+  }
 }
 
 /* This rule remains the same */
 .scene:not([data-active-scene="career"]) .fireworks-container {
-    display: none;
+  display: none;
 }

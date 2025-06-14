@@ -8,7 +8,7 @@ This project is a personal and interactive CSS illustration dedicated to my fath
 
 The best way to experience this story is to see it in action.
 
-[➡️ View Live Demo]([LINK TO YOUR LIVE DEMO HERE])
+[➡️ View Live Demo]([https://eztosin.github.io/The-Gift-That-Sparked-the-Dream/])
 
 ![Project Demo GIF]([LINK TO YOUR GIF HERE])
 _(Suggestion: Replace this line with a GIF showcasing the scene transitions and animations!)_
