@@ -58,13 +58,13 @@ To explore the code on your own machine:
 1. Clone the repository:
 
 ```bash
-git clone [YOUR GITHUB REPO URL]
+git clone [https://github.com/Eztosin/The-Gift-That-Sparked-the-Dream.git]
 ```
 
 2. Navigate into the project directory:
 
 ```bash
-cd [folder-name]
+cd [The-Gift-That-Sparked-the-Dream]
 ```
 
 3. Open the `index.html` file in your favorite web browser.
