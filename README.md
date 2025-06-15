@@ -10,8 +10,7 @@ The best way to experience this story is to see it in action.
 
 [➡️ View Live Demo]([https://eztosin.github.io/The-Gift-That-Sparked-the-Dream])
 
-![Project Demo GIF](The-Gift-gif.gif)
-
+![Project Demo GIF]([The-Gift-gif.gif])
 
 ## 💡 The Concept: A Story in Three Acts
 
