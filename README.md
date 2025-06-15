@@ -8,10 +8,10 @@ This project is a personal and interactive CSS illustration dedicated to my fath
 
 The best way to experience this story is to see it in action.
 
-[➡️ View Live Demo]([https://eztosin.github.io/The-Gift-That-Sparked-the-Dream/])
+[➡️ View Live Demo]([https://eztosin.github.io/The-Gift-That-Sparked-the-Dream])
 
-![Project Demo GIF]([LINK TO YOUR GIF HERE])
-_(Suggestion: Replace this line with a GIF showcasing the scene transitions and animations!)_
+![Project Demo GIF](The-Gift-gif.gif)
+
 
 ## 💡 The Concept: A Story in Three Acts
 
